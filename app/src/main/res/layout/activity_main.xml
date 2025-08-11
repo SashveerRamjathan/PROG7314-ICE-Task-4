@@ -5,15 +5,121 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:fitsSystemWindows="true">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <!-- Title Card -->
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardTitle"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="32dp"
+        app:cardElevation="3dp"
+        app:cardCornerRadius="10dp"
+        app:cardBackgroundColor="@android:color/transparent"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/app_name"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:padding="24dp"/>
+    </com.google.android.material.card.MaterialCardView>
+
+    <!-- Description Card -->
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardDescription"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="16dp"
+        app:cardElevation="3dp"
+        app:cardCornerRadius="10dp"
+        app:cardBackgroundColor="@android:color/transparent"
+        app:layout_constraintTop_toBottomOf="@id/cardTitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <TextView
+            android:id="@+id/tvTitleDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/tv_title_desc_main"
+            android:textSize="18sp"
+            android:textStyle="italic"
+            android:padding="16dp"/>
+    </com.google.android.material.card.MaterialCardView>
+
+    <!-- Buttons Card -->
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardButtons"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="24dp"
+        app:cardElevation="3dp"
+        app:cardCornerRadius="10dp"
+        app:cardBackgroundColor="@android:color/transparent"
+        app:layout_constraintTop_toBottomOf="@id/cardDescription"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="24dp"
+            android:gravity="center_horizontal">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnEverything"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:layout_marginTop="8dp"
+                android:backgroundTint="@color/vermilion"
+                android:text="@string/btn_search_everything"
+                app:cornerRadius="16dp"
+                app:iconGravity="textStart"
+                app:iconPadding="8dp"
+                tools:ignore="VisualLintButtonSize,TextContrastCheck" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnHeadlines"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:layout_marginTop="8dp"
+                android:backgroundTint="@color/vermilion"
+                android:text="@string/btn_top_headlines"
+                app:cornerRadius="16dp"
+                app:iconGravity="textStart"
+                app:iconPadding="8dp"
+                tools:ignore="VisualLintButtonSize,TextContrastCheck" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnSources"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:layout_marginTop="8dp"
+                android:backgroundTint="@color/vermilion"
+                android:text="@string/btn_news_sources"
+                app:cornerRadius="16dp"
+                app:iconGravity="textStart"
+                app:iconPadding="8dp"
+                tools:ignore="VisualLintButtonSize,TextContrastCheck" />
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

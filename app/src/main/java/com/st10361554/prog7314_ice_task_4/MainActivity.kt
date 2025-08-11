@@ -24,5 +24,22 @@ class MainActivity : AppCompatActivity()
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+
+        setupClickListeners()
+    }
+
+    private fun setupClickListeners() {
+        binding.btnEverything.setOnClickListener {
+            TODO()
+        }
+
+        binding.btnHeadlines.setOnClickListener {
+            TODO()
+        }
+
+        binding.btnSources.setOnClickListener {
+            TODO()
+        }
+
     }
 }

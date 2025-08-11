@@ -1,4 +1,8 @@
 <resources>
-    <string name="app_name">PROG7314-ICE-Task-4</string>
+    <string name="app_name">Pulse News</string>
     <string name="news_api_key">9ab99f1983364d77a00d1883e8fd8027</string>
+    <string name="tv_title_desc_main">Stay updated with the latest news from around the world.</string>
+    <string name="btn_search_everything">Search Everything</string>
+    <string name="btn_top_headlines">Top Headlines</string>
+    <string name="btn_news_sources">News Sources</string>
 </resources>
