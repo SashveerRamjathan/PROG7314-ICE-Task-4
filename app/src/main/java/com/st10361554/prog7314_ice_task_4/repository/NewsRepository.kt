@@ -17,53 +17,8 @@ class NewsRepository {
         )
     }
 
-    // SOURCES ENDPOINT METHODS
-
     // Get all available sources
     suspend fun getAllSources(): Response<SourcesResponse> {
         return newsService.getAllSources()
-    }
-
-    // Get sources by category
-    suspend fun getSourcesByCategory(category: String): Response<SourcesResponse> {
-        return newsService.getSourcesByCategory(category)
-    }
-
-    // Get sources by country
-    suspend fun getSourcesByCountry(country: String): Response<SourcesResponse> {
-        return newsService.getSourcesByCountry(country)
-    }
-
-    // Get sources by language
-    suspend fun getSourcesByLanguage(language: String): Response<SourcesResponse> {
-        return newsService.getSourcesByLanguage(language)
-    }
-
-    // Get sources with multiple filters
-    suspend fun getSourcesFiltered(
-        category: String? = null,
-        language: String? = null,
-        country: String? = null
-    ): Response<SourcesResponse> {
-        return newsService.getSourcesFiltered(
-            category = category,
-            language = language,
-            country = country
-        )
-    }
-
-    // Get business sources only
-    suspend fun getBusinessSources(): Response<SourcesResponse> {
-        return newsService.getSourcesByCategory("business")
-    }
-
-    // Get US sources only
-    suspend fun getUSSources(): Response<SourcesResponse> {
-        return newsService.getSourcesByCountry("us")
-    }
-
-    // Get English language sources
-    suspend fun getEnglishSources(): Response<SourcesResponse> {
-        return newsService.getSourcesByLanguage("en")
     }
 }

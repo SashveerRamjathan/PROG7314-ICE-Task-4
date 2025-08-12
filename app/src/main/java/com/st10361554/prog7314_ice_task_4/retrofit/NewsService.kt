@@ -14,41 +14,7 @@ interface NewsService
         @Query("category") category: String
     ): Response<NewsResponse>
 
-    // SOURCES ENDPOINT
-    @GET("top-headlines/sources")
-    suspend fun getSources(
-        @Query("category") category: String? = null,
-        @Query("language") language: String? = null,
-        @Query("country") country: String? = null
-    ): Response<SourcesResponse>
-
     // Get all available sources
     @GET("top-headlines/sources")
     suspend fun getAllSources(): Response<SourcesResponse>
-
-    // Get sources by category
-    @GET("top-headlines/sources")
-    suspend fun getSourcesByCategory(
-        @Query("category") category: String
-    ): Response<SourcesResponse>
-
-    // Get sources by country
-    @GET("top-headlines/sources")
-    suspend fun getSourcesByCountry(
-        @Query("country") country: String
-    ): Response<SourcesResponse>
-
-    // Get sources by language
-    @GET("top-headlines/sources")
-    suspend fun getSourcesByLanguage(
-        @Query("language") language: String
-    ): Response<SourcesResponse>
-
-    // Get sources with multiple filters
-    @GET("top-headlines/sources")
-    suspend fun getSourcesFiltered(
-        @Query("category") category: String? = null,
-        @Query("language") language: String? = null,
-        @Query("country") country: String? = null
-    ): Response<SourcesResponse>
 }

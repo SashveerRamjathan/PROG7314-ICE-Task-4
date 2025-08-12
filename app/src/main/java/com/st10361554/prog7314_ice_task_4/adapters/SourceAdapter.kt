@@ -10,14 +10,13 @@ import com.st10361554.prog7314_ice_task_4.models.NewsSource
 import java.util.*
 import androidx.core.net.toUri
 
-
-class SourceAdapter(private val sources: List<NewsSource>) : RecyclerView.Adapter<SourceAdapter.SourceViewHolder>()
+class SourceAdapter(private val sources: MutableList<NewsSource>) : RecyclerView.Adapter<SourceAdapter.SourceViewHolder>()
 {
+
     class SourceViewHolder(private val binding: ItemSourceBinding) : RecyclerView.ViewHolder(binding.root)
     {
         @SuppressLint("SetTextI18n")
-        fun bind(source: NewsSource)
-        {
+        fun bind(source: NewsSource) {
             binding.tvSourceName.text = source.name
             binding.tvSourceDescription.text = source.description
             binding.tvSourceCategory.text =
@@ -28,12 +27,13 @@ class SourceAdapter(private val sources: List<NewsSource>) : RecyclerView.Adapte
             // Click listener to open source website
             binding.root.setOnClickListener {
                 val intent = Intent(Intent.ACTION_VIEW, source.url.toUri())
-                itemView.context.startActivity(intent)
+                binding.root.context.startActivity(intent)
             }
         }
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SourceViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SourceViewHolder
+    {
         val binding = ItemSourceBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return SourceViewHolder(binding)
     }
@@ -43,4 +43,5 @@ class SourceAdapter(private val sources: List<NewsSource>) : RecyclerView.Adapte
     }
 
     override fun getItemCount(): Int = sources.size
+
 }

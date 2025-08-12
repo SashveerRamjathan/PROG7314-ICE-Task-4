@@ -4,7 +4,7 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
 
     <application
         android:allowBackup="true"
@@ -15,6 +15,9 @@
         android:roundIcon="@mipmap/ic_launcher_pulse_news_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.PROG7314ICETask4">
+        <activity
+            android:name=".SourcesActivity"
+            android:exported="false" />
         <activity
             android:name=".HeadlinesActivity"
             android:exported="false" />

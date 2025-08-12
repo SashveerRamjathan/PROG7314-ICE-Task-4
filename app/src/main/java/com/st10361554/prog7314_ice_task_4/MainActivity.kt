@@ -37,7 +37,8 @@ class MainActivity : AppCompatActivity()
         }
 
         binding.btnSources.setOnClickListener {
-            TODO()
+            val intent = Intent(this, SourcesActivity::class.java)
+            startActivity(intent)
         }
 
     }
