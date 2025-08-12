@@ -1,6 +1,5 @@
 package com.st10361554.prog7314_ice_task_4.retrofit
 
-import com.st10361554.prog7314_ice_task_4.R
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
