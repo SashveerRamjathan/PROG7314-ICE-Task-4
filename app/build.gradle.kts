@@ -18,12 +18,19 @@ android {
     }
 
     buildTypes {
+        debug {
+            // Add BuildConfig field for debug builds
+            buildConfigField("String", "NEWS_API_KEY", "\"${findProperty("NEWS_API_KEY") ?: ""}\"")
+        }
         release {
             isMinifyEnabled = false
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
+
+            // Add BuildConfig field for release builds
+            buildConfigField("String", "NEWS_API_KEY", "\"${findProperty("NEWS_API_KEY") ?: ""}\"")
         }
     }
     compileOptions {
@@ -35,6 +42,7 @@ android {
     }
     buildFeatures {
         viewBinding = true
+        buildConfig = true
     }
 }
 

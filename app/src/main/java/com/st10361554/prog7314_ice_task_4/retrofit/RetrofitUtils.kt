@@ -5,9 +5,11 @@ import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
+import com.st10361554.prog7314_ice_task_4.BuildConfig
 
-object RetrofitUtils {
-    private const val BEARER_TOKEN = "9ab99f1983364d77a00d1883e8fd8027"
+object RetrofitUtils
+{
+    private const val BEARER_TOKEN = BuildConfig.NEWS_API_KEY
 
     fun retrofit2(): Retrofit
     {
