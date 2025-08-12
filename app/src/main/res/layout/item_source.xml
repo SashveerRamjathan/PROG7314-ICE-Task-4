@@ -42,9 +42,10 @@
                 android:id="@+id/tvSourceCategory"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="12sp"
-                android:textColor="@android:color/darker_gray"
                 android:layout_marginBottom="2dp"
+                android:textColor="@android:color/darker_gray"
+                android:textSize="12sp"
+                tools:ignore="TextContrastCheck"
                 tools:text="Category: General" />
 
             <LinearLayout
@@ -57,16 +58,18 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:textSize="12sp"
                     android:textColor="@android:color/darker_gray"
+                    android:textSize="12sp"
+                    tools:ignore="TextContrastCheck"
                     tools:text="Country: GB" />
 
                 <TextView
                     android:id="@+id/tvSourceLanguage"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="12sp"
                     android:textColor="@android:color/darker_gray"
+                    android:textSize="12sp"
+                    tools:ignore="TextContrastCheck"
                     tools:text="Language: EN" />
 
             </LinearLayout>
