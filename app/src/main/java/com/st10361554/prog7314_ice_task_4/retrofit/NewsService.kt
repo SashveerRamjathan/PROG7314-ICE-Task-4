@@ -17,4 +17,20 @@ interface NewsService
     // Get all available sources
     @GET("top-headlines/sources")
     suspend fun getAllSources(): Response<SourcesResponse>
+
+    // Search everything endpoint
+    @GET("everything")
+    suspend fun searchEverything(
+        @Query("q") query: String,
+        @Query("from") fromDate: String? = null,
+        @Query("to") toDate: String? = null,
+        @Query("sortBy") sortBy: String = "publishedAt",
+        @Query("pageSize") pageSize: Int = 100,
+        @Query("page") page: Int = 1,
+        @Query("language") language: String? = null,
+        @Query("searchIn") searchIn: String? = null,
+        @Query("sources") sources: String? = null,
+        @Query("domains") domains: String? = null,
+        @Query("excludeDomains") excludeDomains: String? = null
+    ): Response<NewsResponse>
 }

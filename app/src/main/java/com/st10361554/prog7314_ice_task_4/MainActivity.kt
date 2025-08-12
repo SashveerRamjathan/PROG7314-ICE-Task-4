@@ -31,6 +31,11 @@ class MainActivity : AppCompatActivity()
 
     private fun setupClickListeners()
     {
+        binding.btnSearch.setOnClickListener {
+            val intent = Intent(this, SearchActivity::class.java)
+            startActivity(intent)
+        }
+
         binding.btnHeadlines.setOnClickListener {
             val intent = Intent(this, HeadlinesActivity::class.java)
             startActivity(intent)

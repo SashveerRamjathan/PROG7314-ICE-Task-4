@@ -16,6 +16,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PROG7314ICETask4">
         <activity
+            android:name=".SearchActivity"
+            android:exported="false" />
+        <activity
             android:name=".SourcesActivity"
             android:exported="false" />
         <activity

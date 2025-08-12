@@ -16,4 +16,22 @@
     <string name="cat_sports">Sports</string>
     <string name="cat_technology">Technology</string>
     <string name="tv_title_news_sources">News Sources</string>
+    <string name="btn_search_articles">Search Articles</string>
+    <string name="tv_title_search_articles">Search Articles</string>
+    <string name="et_hint_search_for_articles">Search for articles...</string>
+    <string name="cd_search_btn">Search</string>
+    <string name="tv_sort_by_newest_first">Sort By - Newest First</string>
+    <string name="cd_expand_collapse_sort_by">Expand/Collapse Sort By</string>
+    <string name="chip_newest_first">Newest First</string>
+    <string name="chip_relevancy">Relevancy</string>
+    <string name="chip_popularity">Popularity</string>
+    <string name="tv_date_filter_all_time">Date Filter - All Time</string>
+    <string name="cd_expand_collapse_date_filter">Expand/Collapse Date Filter</string>
+    <string name="chip_all_time">All Time</string>
+    <string name="chip_today">Today</string>
+    <string name="chip_this_week">This Week</string>
+    <string name="chip_this_month">This Month</string>
+    <string name="cd_search">Search</string>
+    <string name="tv_search_for_articles">Search for Articles</string>
+    <string name="tv_enter_keywords_to_find_relevant_news_articles">Enter keywords to find relevant news articles</string>
 </resources>

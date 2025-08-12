@@ -21,4 +21,19 @@ class NewsRepository {
     suspend fun getAllSources(): Response<SourcesResponse> {
         return newsService.getAllSources()
     }
+
+    // Search everything with query, date filtering, and sorting
+    suspend fun searchEverything(
+        query: String,
+        fromDate: String? = null,
+        toDate: String? = null,
+        sortBy: String = "publishedAt"
+    ): Response<NewsResponse> {
+        return newsService.searchEverything(
+            query = query,
+            fromDate = fromDate,
+            toDate = toDate,
+            sortBy = sortBy
+        )
+    }
 }

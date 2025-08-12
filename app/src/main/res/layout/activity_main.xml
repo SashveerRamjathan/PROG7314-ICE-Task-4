@@ -82,6 +82,20 @@
             android:gravity="center_horizontal">
 
             <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnSearch"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:layout_marginTop="8dp"
+                android:backgroundTint="@color/vermilion"
+                android:text="@string/btn_search_articles"
+                app:cornerRadius="16dp"
+                app:iconGravity="textStart"
+                app:iconPadding="8dp"
+                tools:ignore="VisualLintButtonSize,TextContrastCheck"
+                android:textColor="?attr/colorOnSurface"/>
+
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnHeadlines"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -92,7 +106,8 @@
                 app:cornerRadius="16dp"
                 app:iconGravity="textStart"
                 app:iconPadding="8dp"
-                tools:ignore="VisualLintButtonSize,TextContrastCheck" />
+                tools:ignore="VisualLintButtonSize,TextContrastCheck"
+                android:textColor="?attr/colorOnSurface"/>
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnSources"
@@ -105,7 +120,8 @@
                 app:cornerRadius="16dp"
                 app:iconGravity="textStart"
                 app:iconPadding="8dp"
-                tools:ignore="VisualLintButtonSize,TextContrastCheck" />
+                tools:ignore="VisualLintButtonSize,TextContrastCheck"
+                android:textColor="?attr/colorOnSurface"/>
         </LinearLayout>
     </com.google.android.material.card.MaterialCardView>
 
