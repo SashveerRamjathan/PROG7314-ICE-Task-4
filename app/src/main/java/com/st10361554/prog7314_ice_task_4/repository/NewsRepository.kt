@@ -9,94 +9,15 @@ import retrofit2.Response
 class NewsRepository {
     private val newsService = RetrofitUtils.retrofit2().create(NewsService::class.java)
 
-    // EVERYTHING ENDPOINT METHODS
-    suspend fun searchNews(query: String, page: Int = 1): Response<NewsResponse> {
-        return newsService.searchArticles(
-            query = query,
-            page = page,
-            pageSize = 20
-        )
-    }
-
-    suspend fun getNewsBySource(sources: String): Response<NewsResponse> {
-        return newsService.getEverything(sources = sources)
-    }
-
-    suspend fun getNewsByDateRange(
-        query: String,
-        from: String,
-        to: String
-    ): Response<NewsResponse> {
-        return newsService.getEverything(
-            query = query,
-            from = from,
-            to = to,
-            sortBy = "publishedAt"
-        )
-    }
-
-    // TOP HEADLINES ENDPOINT METHODS (existing)
-    suspend fun getTopHeadlines(
-        country: String? = null,
-        category: String? = null,
-        pageSize: Int = 20,
-        page: Int = 1
-    ): Response<NewsResponse> {
-        return newsService.getTopHeadlines(
-            country = country,
-            category = category,
-            pageSize = pageSize,
-            page = page
-        )
-    }
-
-    suspend fun getTopHeadlinesByCountry(
-        country: String,
-        page: Int = 1
-    ): Response<NewsResponse> {
-        return newsService.getTopHeadlinesByCountry(
-            country = country,
-            page = page
-        )
-    }
-
     suspend fun getTopHeadlinesByCategory(
-        category: String,
-        country: String? = null,
-        page: Int = 1
+        category: String
     ): Response<NewsResponse> {
         return newsService.getTopHeadlinesByCategory(
-            category = category,
-            country = country,
-            page = page
+            category = category
         )
     }
 
-    suspend fun getTopHeadlinesBySources(
-        sources: String,
-        page: Int = 1
-    ): Response<NewsResponse> {
-        return newsService.getTopHeadlinesBySources(
-            sources = sources,
-            page = page
-        )
-    }
-
-    suspend fun searchTopHeadlines(
-        query: String,
-        country: String? = null,
-        category: String? = null,
-        page: Int = 1
-    ): Response<NewsResponse> {
-        return newsService.searchTopHeadlines(
-            query = query,
-            country = country,
-            category = category,
-            page = page
-        )
-    }
-
-    // SOURCES ENDPOINT METHODS (new)
+    // SOURCES ENDPOINT METHODS
 
     // Get all available sources
     suspend fun getAllSources(): Response<SourcesResponse> {

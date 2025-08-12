@@ -2,7 +2,17 @@
     <string name="app_name">Pulse News</string>
     <string name="news_api_key">9ab99f1983364d77a00d1883e8fd8027</string>
     <string name="tv_title_desc_main">Stay updated with the latest news from around the world.</string>
-    <string name="btn_search_everything">Search Everything</string>
     <string name="btn_top_headlines">Top Headlines</string>
     <string name="btn_news_sources">News Sources</string>
+    <string name="cd_back_button">Back Button</string>
+    <string name="tv_title_top_headlines">Top Headlines</string>
+    <string name="tv_select_category_general">Select Category - General</string>
+    <string name="cd_expand_collapse">Expand/Collapse</string>
+    <string name="cat_business">Business</string>
+    <string name="cat_entertainment">Entertainment</string>
+    <string name="cat_general">General</string>
+    <string name="cat_health">Health</string>
+    <string name="cat_science">Science</string>
+    <string name="cat_sports">Sports</string>
+    <string name="cat_technology">Technology</string>
 </resources>

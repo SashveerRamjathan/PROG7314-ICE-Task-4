@@ -1,5 +1,6 @@
 package com.st10361554.prog7314_ice_task_4
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -28,13 +29,11 @@ class MainActivity : AppCompatActivity()
         setupClickListeners()
     }
 
-    private fun setupClickListeners() {
-        binding.btnEverything.setOnClickListener {
-            TODO()
-        }
-
+    private fun setupClickListeners()
+    {
         binding.btnHeadlines.setOnClickListener {
-            TODO()
+            val intent = Intent(this, HeadlinesActivity::class.java)
+            startActivity(intent)
         }
 
         binding.btnSources.setOnClickListener {

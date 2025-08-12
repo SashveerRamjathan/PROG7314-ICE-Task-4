@@ -14,10 +14,10 @@ import java.text.SimpleDateFormat
 import java.util.*
 import androidx.core.net.toUri
 
-class ArticleAdapter(private val articles: List<Article>) : RecyclerView.Adapter<ArticleAdapter.ArticleViewHolder>()
+class ArticleAdapter(private val articles: MutableList<Article>) : RecyclerView.Adapter<ArticleAdapter.ArticleViewHolder>()
 {
-
-    class ArticleViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    class ArticleViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView)
+    {
         private val tvTitle: TextView = itemView.findViewById(R.id.tvTitle)
         private val tvDescription: TextView = itemView.findViewById(R.id.tvDescription)
         private val tvSource: TextView = itemView.findViewById(R.id.tvSource)
@@ -25,8 +25,7 @@ class ArticleAdapter(private val articles: List<Article>) : RecyclerView.Adapter
         private val tvPublishedAt: TextView = itemView.findViewById(R.id.tvPublishedAt)
         private val ivArticleImage: ImageView = itemView.findViewById(R.id.ivArticleImage)
 
-        fun bind(article: Article)
-        {
+        fun bind(article: Article) {
             tvTitle.text = article.title
             tvDescription.text = article.description ?: "No description available"
             tvSource.text = article.source.name
@@ -37,10 +36,12 @@ class ArticleAdapter(private val articles: List<Article>) : RecyclerView.Adapter
             if (!article.urlToImage.isNullOrEmpty()) {
                 Glide.with(itemView.context)
                     .load(article.urlToImage)
+                    .placeholder(R.drawable.ic_default_image) // Add a placeholder
+                    .error(R.drawable.ic_default_image) // Add an error image
                     .into(ivArticleImage)
             } else {
                 // Set a placeholder or hide the image view
-                ivArticleImage.setImageResource(android.R.color.darker_gray)
+                ivArticleImage.setImageResource(R.drawable.ic_default_image)
             }
 
             // Click listener to open article in browser
@@ -50,8 +51,7 @@ class ArticleAdapter(private val articles: List<Article>) : RecyclerView.Adapter
             }
         }
 
-        private fun formatDate(dateString: String): String
-        {
+        private fun formatDate(dateString: String): String {
             return try {
                 val inputFormat = SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'", Locale.getDefault())
                 val outputFormat = SimpleDateFormat("MMM dd, yyyy HH:mm", Locale.getDefault())
@@ -63,16 +63,21 @@ class ArticleAdapter(private val articles: List<Article>) : RecyclerView.Adapter
         }
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ArticleViewHolder
-    {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ArticleViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_article, parent, false)
         return ArticleViewHolder(view)
     }
 
-    override fun onBindViewHolder(holder: ArticleViewHolder, position: Int)
-    {
+    override fun onBindViewHolder(holder: ArticleViewHolder, position: Int) {
         holder.bind(articles[position])
     }
 
     override fun getItemCount(): Int = articles.size
+
+    // Method to update articles list
+    fun updateArticles(newArticles: List<Article>) {
+        articles.clear()
+        articles.addAll(newArticles)
+        notifyDataSetChanged()
+    }
 }

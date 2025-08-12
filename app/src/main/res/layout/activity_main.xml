@@ -82,19 +82,6 @@
             android:gravity="center_horizontal">
 
             <com.google.android.material.button.MaterialButton
-                android:id="@+id/btnEverything"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:layout_marginTop="8dp"
-                android:backgroundTint="@color/vermilion"
-                android:text="@string/btn_search_everything"
-                app:cornerRadius="16dp"
-                app:iconGravity="textStart"
-                app:iconPadding="8dp"
-                tools:ignore="VisualLintButtonSize,TextContrastCheck" />
-
-            <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnHeadlines"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

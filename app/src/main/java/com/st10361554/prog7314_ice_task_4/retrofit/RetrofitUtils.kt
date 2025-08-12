@@ -8,7 +8,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
 
 object RetrofitUtils {
-    private val BEARER_TOKEN = R.string.news_api_key
+    private const val BEARER_TOKEN = "9ab99f1983364d77a00d1883e8fd8027"
 
     fun retrofit2(): Retrofit
     {
